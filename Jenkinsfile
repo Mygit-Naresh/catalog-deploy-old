@@ -44,7 +44,8 @@ pipeline {
     }
     }
       stage('post build results')  {
-  post {
+        steps {
+    post {
    always {
       echo "Check you status below failure or success"
       
@@ -57,6 +58,7 @@ pipeline {
         
     }
   }
+}
 }
 }
 }
