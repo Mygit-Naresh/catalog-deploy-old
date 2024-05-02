@@ -38,7 +38,7 @@ pipeline {
       steps {
        script {
         echo  params.version
-        echo  param.enviroment
+        echo  params.environment
        }
 
     }
