@@ -12,8 +12,8 @@ pipeline {
    parameters {
 //         // booleanParam, choice, file, text, password, run, or string
 //         booleanParam(defaultValue: true, description: '', name: 'booleanExample')
-        string(defaultValue: "", description: 'What is version?', name: "version")
-        string(defaultValue: "", description: 'What is environment?', name: "environment")
+        string(defaultValue: '', description: 'What is version?', name: "version")
+        string(defaultValue: '', description: 'What is environment?', name: "environment")
 //         text(defaultValue: "This is a multiline\n text", description: "Multiline Text", name: "textExample")
 //         choice(choices: 'US-EAST-1\nUS-WEST-2', description: 'What AWS region?', name: 'choiceExample')
 //         password(defaultValue: "Password", description: "Password Parameter", name: "passwordExample")
