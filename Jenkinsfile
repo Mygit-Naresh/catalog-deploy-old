@@ -43,12 +43,11 @@ pipeline {
 
     }
     }
-      stage('post build results')  {
-        steps {
-    post {
+    }
+      post {
    always {
       echo "Check you status below failure or success"
-      
+      deleteDir()
    }
     failure {
         echo "your build failed"
@@ -59,7 +58,6 @@ pipeline {
     }
   }
 }
-}
-}
-}
+
+
 
