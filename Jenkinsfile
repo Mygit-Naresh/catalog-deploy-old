@@ -56,17 +56,17 @@ pipeline {
 
     }
     }
-   stage('terraform plan from tfvars') {
-      steps {
-       script {
-        sh """
-          cd terraform
-          terraform plan -var-file=${params.environment}/${params.environment}.tfvars -var="appversion=${params.version}"
-          """
-       }
+   // stage('terraform plan from tfvars') {
+   //    steps {
+   //     script {
+   //      sh """
+   //        cd terraform
+   //        terraform plan -var-file=${params.environment}/${params.environment}.tfvars -var="appversion=${params.version}"
+   //        """
+   //     }
 
-    }
-    }
+   //  }
+   //  }
      stage('terraform apply from tfvars') {
       steps {
        script {
