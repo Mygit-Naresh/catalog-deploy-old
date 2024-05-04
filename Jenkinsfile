@@ -67,6 +67,17 @@ pipeline {
 
     }
     }
+     stage('terraform apply from tfvars') {
+      steps {
+       script {
+        sh """
+          cd terraform
+          terraform apply -var-file=${params.environment}/${params.environment}.tfvars -var="appversion=${params.version} -auto-approve"
+          """
+       }
+
+    }
+    }
 
     }
       post {
