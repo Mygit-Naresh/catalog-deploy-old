@@ -56,6 +56,17 @@ pipeline {
 
     }
     }
+         stage('terraform plan from tfvars') {
+      steps {
+       script {
+        sh """
+          cd terraform
+          terraform plan -var-file=dev/dev.tfvars
+          """
+       }
+
+    }
+    }
 
     }
       post {
