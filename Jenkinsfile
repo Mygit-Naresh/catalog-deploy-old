@@ -43,13 +43,13 @@ pipeline {
 
     }
     }
-       stage('deploy catalog') {
+       stage('terraform init from tfvars') {
       steps {
        script {
         sh """
           cd terraform
-          terraform init  -backend-config="dev/backend.tf" -reconfigure
-          terraform plan -var-file="dev/dev.tfvars"
+          terraform init  --backend-config=dev/backend.tf -reconfigure
+          
 
         """
        }
