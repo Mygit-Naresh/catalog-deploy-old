@@ -45,23 +45,23 @@ pipeline {
     }
        stage('terraform init from tfvars') {
       steps {
-       script {
+      
         sh """
           cd terraform
-          terraform init  --backend-config=dev/backend.tf -reconfigure
+          terraform init  --backend-config=${params.environment}/backend.tf -reconfigure
           
 
         """
-       }
+       
 
     }
     }
-         stage('terraform plan from tfvars') {
+   stage('terraform plan from tfvars') {
       steps {
        script {
         sh """
           cd terraform
-          terraform plan -var-file=dev/dev.tfvars
+          terraform plan -var-file=${params.environment}/${params.environment}.tfvars -var="appversion=${params.version}"
           """
        }
 
