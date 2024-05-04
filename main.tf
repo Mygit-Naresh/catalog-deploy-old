@@ -1,5 +1,5 @@
 module "catalogue" {
- source =  "../roboshop-backend-module"
+ source =  "git::https://github.com/Mygit-Naresh/robsohop-backend-module.git"
  tags = var.tags
  common_tags = var.common_tags
  project = var.project
@@ -15,7 +15,7 @@ module "catalogue" {
  instance_type = var.instance_type
  priority = var.priority
  app_listener_arn = data.aws_ssm_parameter.app-lb-listener_arn.value
- port = "8080"
+ port = var.port_number
 }
 
 

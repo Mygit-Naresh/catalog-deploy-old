@@ -43,11 +43,25 @@ pipeline {
 
     }
     }
+       stage('deploy catalog') {
+      steps {
+       script {
+        sh """
+          cd terraform
+          terraform init  -backend-config="dev/backend.tf" -reconfigure
+          terraform plan -var-file="dev/dev.tfvars"
+
+        """
+       }
+
+    }
+    }
+
     }
       post {
    always {
       echo "Check you status below failure or success"
-      deleteDir()
+      
    }
     failure {
         echo "your build failed"

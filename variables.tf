@@ -8,11 +8,11 @@ variable "common_tags" {
   default = {
     Createdby   = "Terraform",
     Costcenter  = "FIN-005-HYD-CLOUD-AWS",
-    Admin_email = "admin.roboshop@gmail.com"
+    Admin_email = "admin.useterraform@gmail.com"
   }
 }
 variable "project" {
-  default = "roboshop"
+  default = "useterraform"
 }
 variable "environment" {
   default = "dev"
@@ -32,4 +32,7 @@ variable "priority" {
 }
 variable "name" {
   default = "catalogue"
+}
+variable "port_number" {
+  default = "8080"
 }
